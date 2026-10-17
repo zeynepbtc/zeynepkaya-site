@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="robots" content="noindex" />
+  <meta http-equiv="refresh" content="0; url=/apps/japanese-flick/" />
+  <title>Japanese Flick</title>
+</head>
+<body>
+<script>
+  Promise.all([
+    "serviceWorker" in navigator
+      ? navigator.serviceWorker.getRegistrations().then(items => Promise.all(items.map(item => item.unregister())))
+      : Promise.resolve(),
+    "caches" in window
+      ? caches.keys().then(keys => Promise.all(keys.map(key => caches.delete(key))))
+      : Promise.resolve()
+  ]).finally(() => location.replace("/apps/japanese-flick/"));
+</script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Destek · Japanese Flick</title>
+<link rel="icon" type="image/png" href="/japanese-flick/icons/appicon-rounded-512.png" />
+<link rel="apple-touch-icon" href="/japanese-flick/icons/appicon-rounded-512.png" />
+<meta name="description" content="Destek / İletişim, Japonca Flick Klavye. Support / Contact, Japanese Flick.">
+<style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Shippori+Mincho:wght@600;700;800&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#eee8dc;--panel:#fff9ee;--ink:#2b251f;--muted:#746a5e;--line:#d8cbbb;--accent:#d3813a;--accent2:#bf6f2b;--gold:#8c6414}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;font-size:16px}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+header{padding:40px 0 26px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:12px}
+.mark{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px;font-weight:900;flex:none}
+.brand h1{font-family:"Shippori Mincho",Georgia,serif;font-size:22px;font-weight:800;letter-spacing:.3px}
+.brand .sub{font-size:13px;color:var(--muted);margin-top:2px}
+main{padding:22px 0 8px}
+.langbar{display:flex;gap:8px;margin:0 0 22px;position:sticky;top:0;background:var(--bg);padding:12px 0;z-index:5}
+.langbar button{flex:1;max-width:150px;padding:9px;border-radius:11px;border:1px solid var(--line);background:var(--panel);color:var(--muted);font-weight:800;font-size:13px;cursor:pointer}
+.langbar button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.doc-title{font-family:"Shippori Mincho",Georgia,serif;font-size:30px;font-weight:800;line-height:1.15;margin-bottom:6px}
+.updated{font-size:13px;color:var(--muted);margin-bottom:26px}
+h2{font-family:"Shippori Mincho",Georgia,serif;font-size:20px;font-weight:800;margin:30px 0 10px;color:var(--ink)}
+h3{font-size:16px;font-weight:800;margin:18px 0 6px}
+p{margin:10px 0}
+ul{margin:10px 0 10px 4px;padding-left:20px}
+li{margin:6px 0}
+a{color:var(--accent2);font-weight:600}
+strong,b{font-weight:800}
+.note{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:16px 18px;margin:20px 0}
+.note .nt{font-size:12px;font-weight:900;letter-spacing:1px;color:var(--accent2);margin-bottom:6px}
+.mail{display:inline-block;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 16px;font-weight:800;color:var(--accent2);margin:4px 0;text-decoration:none}
+footer{margin-top:40px;padding:24px 0 46px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+footer nav{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:12px}
+footer nav a{color:var(--ink);font-weight:700;text-decoration:none}
+footer nav a:hover{color:var(--accent2)}
+footer .fine{font-size:12.5px}
+@media(max-width:560px){.doc-title{font-size:25px}body{font-size:15.5px}}
+  .backlink{display:inline-flex;align-items:center;gap:6px;margin-bottom:16px;padding:8px 14px;border-radius:999px;background:#fff9ee;border:1px solid #d8cbbb;color:#2b251f;font-weight:800;font-size:13px;text-decoration:none;transition:color .15s}
+  .backlink:hover{color:#bf6f2b}
+  .zk-footer{max-width:760px;margin:46px auto 0;padding:22px 20px 42px;border-top:1px solid #d8cbbb;text-align:center;font-family:Inter,system-ui,sans-serif}
+  .zk-footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 14px;margin-bottom:13px}
+  .zk-footer nav a{color:#746a5e;font-size:13px;font-weight:700;text-decoration:none;transition:color .15s}
+  .zk-footer nav a:hover{color:#bf6f2b}
+  .zk-fine{color:#a99a86;font-size:12.5px;font-weight:700}
+
+  .topbar{position:sticky;top:12px;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:14px;margin:0 0 18px;padding:11px 13px;border:1px solid rgba(216,203,187,.75);background:rgba(255,249,238,.82);backdrop-filter:blur(14px);border-radius:20px;box-shadow:0 12px 30px rgba(69,49,30,.10)}
+  .topbar .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#2b251f;min-width:0}
+  .topbar .mark{width:38px;height:38px;border-radius:13px;background:#d3813a;box-shadow:0 5px 0 rgba(111,72,38,.2);transform:rotate(-4deg)}
+  .topbar .brand b{display:block;font-size:14px;font-weight:900;line-height:1.1}
+  .topbar .brand small{display:block;font-size:11px;color:#746a5e;font-weight:650}
+  .topbar .lang{display:flex;gap:4px;padding:4px;border-radius:999px;background:rgba(234,223,206,.85)}
+  .topbar .lang button{border:0;border-radius:999px;background:transparent;color:#746a5e;font-weight:800;font-size:12px;padding:7px 11px;cursor:pointer;font-family:inherit}
+  .topbar .lang button.on{background:#2b251f;color:#fff}
+  .zk-rights{margin-top:6px;color:#a99a86;font-size:11.5px;font-weight:600;line-height:1.5}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="topbar">
+  <a class="brand" href="/"><img class="mark" src="/zk-logo.svg" alt="Zeynep Kaya Apps" /><div><b>Zeynep Kaya Apps</b><small class="tr">öğrenme araçları</small><small class="en" hidden>learning tools</small></div></a>
+  <div class="lang" aria-label="Language"><button id="trBtn" class="on" type="button" onclick="setLang('tr')">TR</button><button id="enBtn" type="button" onclick="setLang('en')">EN</button></div>
+</header>
+
+  <main>
+    <a class="backlink" href="/apps/japanese-flick/">← Japanese Flick</a>
+    <!-- ================= TÜRKÇE ================= -->
+    <div class="tr">
+    <div class="doc-title">Destek / İletişim</div>
+    <div class="updated">Son güncelleme: 17 Ekim 2026</div>
+
+<p>Japanese Flick ile ilgili bir sorun, içerik düzeltmesi veya öneri için bu sayfadaki iletişim adresini kullanabilirsin. Mesajına uygulama sürümünü, cihaz modelini ve sorunu gördüğün ekranı eklersen konuyu daha hızlı inceleyebiliriz.</p>
+
+<div class="note">
+  <div class="nt">İLETİŞİM</div>
+  <p style="margin-top:2px">Bir sorun, öneri veya geri bildirim için:</p>
+  <a class="mail" href="mailto:hello@zeynepkaya.app">hello@zeynepkaya.app</a>
+  <p style="margin-bottom:0">Mesajına <strong>uygulama sürümünü</strong>, <strong>cihaz modelini</strong> ve sorunu gördüğün <strong>ekranı</strong> eklersen çok daha hızlı inceleyebiliriz.</p>
+</div>
+
+<h2>Sık sorulanlar</h2>
+
+<h3>İlerlemem kaybolur mu?</h3>
+<p>İlerlemen yalnızca cihazında saklanır. Cihazını değiştirirsen veya tarayıcı/uygulama verilerini temizlersen ilerlemen silinir. Bu yüzden zaman zaman <strong>Ayarlar → Veriyi dışa aktar</strong> ile yedek almanı öneririz; yeni cihazda <strong>Veriyi içe aktar</strong> ile geri yükleyebilirsin.</p>
+
+<h3>Sesler bazen mekanik/robotik geliyor</h3>
+<p>Telaffuz sesleri uygulamaya gömülü yerel dosyalardan çalınır. Bazı kelimelerde henüz kayıtlı ses bulunmadığında, cihazının kendi konuşma motoru (TTS) devreye girer ve sesi farklı duyulabilir. Ses kütüphanesini sürümden sürüme genişletiyoruz.</p>
+
+<h3>Uygulamayı nasıl güncellerim?</h3>
+<p>iPhone ve iPad sürümü App Store üzerinden güncellenir. Web sürümünde yeni dosyalar çevrimiçi açılışta alınır. Bir güncelleme görünmüyorsa uygulamayı tamamen kapatıp yeniden açabilir veya App Store'daki güncelleme listesini kontrol edebilirsin.</p>
+
+<h3>İlerlemeyi nasıl sıfırlarım?</h3>
+<p><strong>Ayarlar → İlerlemeyi sıfırla</strong> seçeneğini kullanabilirsin. Bu işlem geri alınamaz; öncesinde yedek almanı öneririz.</p>
+
+<h3>“Flick” tam olarak ne demek?</h3>
+<p>Flick, Japon telefonlarının standart klavyesidir. 12 tuş vardır ve her tuş bir kana satırını temsil eder. Tuşa dokunursan temel sesi (か) yazarsın; tuşa basıp yukarı, aşağı, sağ veya sola kaydırırsan o satırın diğer kanalarını (き, く, け, こ) yazarsın.</p>
+
+<h2>Gizlilik</h2>
+<p>Uygulama hiçbir kişisel veri toplamaz. Ayrıntılar için <a href="../privacy/">Gizlilik Politikası</a> sayfasına bakabilirsin.</p>
+    </div>
+
+    <!-- ================= ENGLISH ================= -->
+    <div class="en" hidden>
+    <div class="doc-title">Support / Contact</div>
+    <div class="updated">Last updated: 17 October 2026</div>
+
+<p>Use the contact address on this page to report a problem, suggest an improvement or request a content correction. Including the app version, device model and the screen where the issue appears will help us investigate it more quickly.</p>
+
+<div class="note">
+  <div class="nt">CONTACT</div>
+  <p style="margin-top:2px">For a problem, suggestion or feedback:</p>
+  <a class="mail" href="mailto:hello@zeynepkaya.app">hello@zeynepkaya.app</a>
+  <p style="margin-bottom:0">If you include your <strong>app version</strong>, <strong>device model</strong> and the <strong>screen</strong> where you saw the issue, we can look into it much faster.</p>
+</div>
+
+<h2>Common questions</h2>
+
+<h3>Will my progress be lost?</h3>
+<p>Your progress is stored only on your device. If you switch devices or clear your browser/app data, your progress is deleted. That's why we recommend backing up now and then via <strong>Settings → Export data</strong>; you can restore it on a new device via <strong>Settings → Import data</strong>.</p>
+
+<h3>The sounds are sometimes mechanical/robotic</h3>
+<p>Pronunciation sounds are played from local files bundled into the app. When a word doesn't yet have a recorded sound, your device's own speech engine (TTS) kicks in and may sound different. We're expanding the audio library version by version.</p>
+
+<h3>How do I update the app?</h3>
+<p>The iPhone and iPad version is updated through the App Store. The web version retrieves new files when opened online. If an update does not appear, close and reopen the app or check the update list in the App Store.</p>
+
+<h3>How do I reset progress?</h3>
+<p>You can use <strong>Settings → Reset progress</strong>. This action can't be undone; we recommend backing up first.</p>
+
+<h3>What exactly does “flick” mean?</h3>
+<p>Flick is the standard keyboard on Japanese phones. It has 12 keys, and each key represents a row of kana. Tapping a key types its base sound (か); pressing and flicking up, down, right or left types the other kana in that row (き, く, け, こ).</p>
+
+<h2>Privacy</h2>
+<p>The app collects no personal data. For details, see the <a href="../privacy/">Privacy Policy</a> page.</p>
+    </div>
+
+  </main>
+  <footer class="zk-footer">
+    <nav>
+      <a href="/"><span class="tr">Ana sayfa</span><span class="en" hidden>Home</span></a>
+
+      <a href="/japanese-flick/sss/"><span class="tr">SSS</span><span class="en" hidden>FAQ</span></a>
+      <a href="/japanese-flick/support/"><span class="tr">Destek</span><span class="en" hidden>Support</span></a>
+      <a href="/japanese-flick/privacy/"><span class="tr">Gizlilik</span><span class="en" hidden>Privacy</span></a>
+      <a href="/japanese-flick/terms/"><span class="tr">Şartlar</span><span class="en" hidden>Terms</span></a>
+    </nav>
+    <div class="zk-fine">© <span id="year">2026</span> Zeynep Kaya Apps</div>
+    <div class="zk-rights"><span class="tr">Tüm tasarım, görsel dil ve fikirler Zeynep Kaya'ya aittir. Tüm hakları saklıdır.</span><span class="en" hidden>All design, visual language and ideas belong to Zeynep Kaya. All rights reserved.</span></div>
+  </footer>
+</div>
+<script>
+function setLang(l){
+  document.documentElement.lang=l;
+  document.querySelectorAll('.tr').forEach(function(e){e.hidden=(l!=='tr');});
+  document.querySelectorAll('.en').forEach(function(e){e.hidden=(l!=='en');});
+  var t=document.getElementById('trBtn'),n=document.getElementById('enBtn');
+  if(t)t.classList.toggle('on',l==='tr'); if(n)n.classList.toggle('on',l==='en');
+  try{localStorage.setItem('zk_lang',l);}catch(err){}
+}
+try{var s=localStorage.getItem('zk_lang'); if(s==='en'||s==='tr') setLang(s);}catch(err){}
+var yy=document.getElementById('year'); if(yy) yy.textContent=new Date().getFullYear();
+</script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c0c1eb8c7e0f4cd48413deedf5cf28bf"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

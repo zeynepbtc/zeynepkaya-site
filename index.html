@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Zeynep Kaya Apps</title>
+<meta name="description" content="Zeynep Kaya Apps · Japanese Flick ve Kanji Atlas ile Japonca yazma ve kanji çalışmaları." />
+<link rel="icon" type="image/svg+xml" href="/zk-logo.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="apple-touch-icon" href="/zk-logo-180.png" />
+<link rel="canonical" href="https://zeynepkaya.app/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Zeynep Kaya Apps" />
+<meta property="og:title" content="Zeynep Kaya Apps" />
+<meta property="og:description" content="Japanese Flick ile Japonca klavye pratiği, Kanji Atlas ile karakterleri keşfet." />
+<meta property="og:url" content="https://zeynepkaya.app/" />
+<meta property="og:image" content="https://zeynepkaya.app/zk-logo-512.png" />
+<meta name="twitter:card" content="summary" />
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Zeynep Kaya Apps","url":"https://zeynepkaya.app/","logo":"https://zeynepkaya.app/zk-logo-512.png"},{"@type":"WebSite","name":"Zeynep Kaya Apps","url":"https://zeynepkaya.app/"}]}</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+  :root{
+    --bg:#eee8dc;
+    --paper:#fff9ee;
+    --paper2:#f7efe1;
+    --paper3:#eadfce;
+    --ink:#2b251f;
+    --muted:#746a5e;
+    --line:#d8cbbb;
+    --orange:#d3813a;
+    --orange2:#bf6f2b;
+    --teal:#4f9a8f;
+    --deep:#275f59;
+    --brick:#b5502f;
+    --gold:#d7a852;
+    --shadow:0 18px 45px rgba(82,61,38,.18);
+    --shadow2:0 9px 0 rgba(107,77,48,.14);
+    --radius:28px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    min-height:100vh;
+    font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(800px 460px at 8% 5%, rgba(211,129,58,.20), transparent 60%),
+      radial-gradient(760px 430px at 92% 8%, rgba(79,154,143,.18), transparent 62%),
+      radial-gradient(700px 400px at 75% 95%, rgba(183,80,47,.12), transparent 60%),
+      var(--bg);
+    overflow-x:hidden;
+  }
+
+  body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.22;
+    mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+    z-index:0;
+  }
+
+  a{color:inherit;text-decoration:none}
+  .page{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:24px 22px 60px}
+
+  .topbar{
+    position:sticky;
+    top:14px;
+    z-index:20;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    margin-bottom:34px;
+    padding:12px 14px;
+    border:1px solid rgba(216,203,187,.75);
+    background:rgba(255,249,238,.72);
+    backdrop-filter:blur(14px);
+    border-radius:24px;
+    box-shadow:0 12px 30px rgba(69,49,30,.10);
+  }
+
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    min-width:0;
+  }
+
+  .mark{
+    width:42px;
+    height:42px;
+    border-radius:15px;
+    background:var(--orange);
+    color:#fff;
+    display:grid;
+    place-items:center;
+    font-weight:900;
+    box-shadow:0 5px 0 rgba(111,72,38,.20);
+    transform:rotate(-4deg);
+  }
+
+  .brand b{display:block;font-size:15px;font-weight:900;letter-spacing:.2px}
+  .brand span{display:block;font-size:12px;color:var(--muted);font-weight:650;margin-top:1px}
+
+  .nav{
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+
+  .nav a,.lang button{
+    border:0;
+    border-radius:999px;
+    background:rgba(255,255,255,.55);
+    color:var(--ink);
+    font-weight:800;
+    font-size:13px;
+    padding:10px 13px;
+    cursor:pointer;
+  }
+
+  .lang{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    padding:4px;
+    border-radius:999px;
+    background:rgba(234,223,206,.8);
+  }
+
+  .lang button{padding:8px 11px;color:var(--muted)}
+  .lang button.on{background:var(--ink);color:#fff}
+
+  .hero{
+    min-height:680px;
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(360px,520px);
+    align-items:center;
+    gap:42px;
+    padding:18px 0 70px;
+  }
+
+  .hero-copy{
+    position:relative;
+    z-index:3;
+    max-width:620px;
+  }
+
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 13px;
+    border-radius:999px;
+    background:rgba(79,154,143,.13);
+    color:var(--deep);
+    font-weight:900;
+    font-size:12px;
+    letter-spacing:.8px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+  }
+
+  .eyebrow:before{
+    content:"";
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:var(--teal);
+    box-shadow:0 0 0 5px rgba(79,154,143,.14);
+  }
+
+  h1{
+    font-size:clamp(42px,6vw,76px);
+    line-height:.95;
+    letter-spacing:-3px;
+    font-weight:900;
+    max-width:760px;
+  }
+
+  .lead{
+    margin-top:22px;
+    max-width:560px;
+    font-size:18px;
+    line-height:1.65;
+    color:var(--muted);
+    font-weight:650;
+  }
+
+  .manifesto{
+    margin-top:22px;
+    max-width:560px;
+    padding:18px 20px;
+    border-radius:22px;
+    background:rgba(255,249,238,.68);
+    border:1px solid rgba(216,203,187,.8);
+    box-shadow:0 10px 26px rgba(78,56,34,.08);
+    color:#5e5348;
+    font-size:15px;
+    line-height:1.65;
+    font-weight:650;
+  }
+
+  .cta-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:26px;
+  }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    min-height:48px;
+    padding:14px 18px;
+    border-radius:16px;
+    font-weight:900;
+    border:0;
+    cursor:pointer;
+    box-shadow:0 5px 0 rgba(92,64,39,.18);
+    transition:.18s ease;
+  }
+
+  .btn:hover{transform:translateY(-2px)}
+  .btn.primary{background:var(--orange);color:#fff}
+  .btn.secondary{background:var(--paper);color:var(--ink);border:1px solid var(--line)}
+
+  .stage{
+    position:relative;
+    height:620px;
+    perspective:1000px;
+  }
+
+  .float-card{
+    position:absolute;
+    border-radius:var(--radius);
+    background:linear-gradient(180deg,var(--paper),var(--paper2));
+    border:1px solid rgba(216,203,187,.9);
+    box-shadow:var(--shadow),var(--shadow2);
+    overflow:hidden;
+    transform-style:preserve-3d;
+    transition:transform .18s ease-out;
+  }
+
+  .float-card:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");
+    mix-blend-mode:multiply;
+    opacity:.2;
+    pointer-events:none;
+  }
+
+  .jf{
+    width:370px;
+    min-height:470px;
+    right:42px;
+    top:26px;
+    transform:rotate(2deg);
+    z-index:6;
+  }
+
+  .atlas{
+    width:282px;
+    min-height:235px;
+    left:18px;
+    top:100px;
+    transform:rotate(-7deg);
+    z-index:5;
+  }
+
+  .exam{
+    width:282px;
+    min-height:230px;
+    left:54px;
+    bottom:60px;
+    transform:rotate(5deg);
+    z-index:4;
+  }
+
+  .math{
+    width:250px;
+    min-height:190px;
+    right:4px;
+    bottom:36px;
+    transform:rotate(-5deg);
+    z-index:3;
+  }
+
+  .card-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:14px 16px 0;
+  }
+
+  .badge{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    border-radius:999px;
+    padding:7px 10px;
+    background:rgba(211,129,58,.13);
+    color:var(--orange2);
+    font-weight:900;
+    font-size:11px;
+    letter-spacing:.6px;
+    text-transform:uppercase;
+  }
+
+  .badge.teal{background:rgba(79,154,143,.13);color:var(--deep)}
+  .badge.brick{background:rgba(181,80,47,.12);color:var(--brick)}
+  .badge.gold{background:rgba(215,168,82,.18);color:#8b651a}
+
+  .dots{
+    display:flex;
+    gap:5px;
+  }
+
+  .dots i{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:var(--line);
+  }
+
+  .card-body{padding:18px 18px 20px;position:relative;z-index:2}
+  .card-body h2,.card-body h3{
+    font-size:27px;
+    line-height:1.02;
+    letter-spacing:-1px;
+    font-weight:900;
+    margin-bottom:10px;
+  }
+
+  .card-body h3{font-size:21px}
+  .card-body p{
+    font-size:14px;
+    line-height:1.55;
+    color:var(--muted);
+    font-weight:650;
+  }
+
+  .mini-link{
+    display:inline-flex;
+    margin-top:15px;
+    padding:10px 12px;
+    border-radius:13px;
+    background:var(--ink);
+    color:#fff;
+    font-size:12px;
+    font-weight:900;
+  }
+
+  .phone{
+    margin:18px auto 0;
+    width:210px;
+    height:330px;
+    border-radius:34px;
+    background:#24201b;
+    padding:13px;
+    box-shadow:inset 0 0 0 2px rgba(255,255,255,.08),0 20px 40px rgba(57,37,20,.22);
+  }
+
+  .screen-shot{
+    height:100%;
+    border-radius:25px;
+    background:linear-gradient(180deg,#e4dccd,#d3cbbc);
+    padding:12px;
+    overflow:hidden;
+    position:relative;
+  }
+
+  .app-hero{
+    height:82px;
+    border-radius:19px;
+    background:var(--orange);
+    padding:14px;
+    color:#2f2118;
+    position:relative;
+  }
+
+  .app-hero b{
+    position:relative;
+    z-index:2;
+    display:block;
+    max-width:120px;
+    font-size:16px;
+    line-height:1.05;
+    font-weight:900;
+  }
+
+  .flick-icon{
+    position:absolute;
+    right:10px;
+    top:12px;
+    width:56px;
+    height:56px;
+    z-index:1;
+    opacity:.9;
+  }
+
+  .flick-icon .center{
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:24px;
+    height:24px;
+    border-radius:8px;
+    transform:translate(-50%,-50%);
+    background:#fff;
+  }
+
+  .flick-icon span{
+    position:absolute;
+    width:0;
+    height:0;
+    border-style:solid;
+  }
+
+  .flick-icon .u{left:23px;top:0;border-width:0 6px 10px 6px;border-color:transparent transparent #fff transparent}
+  .flick-icon .d{left:23px;bottom:0;border-width:10px 6px 0 6px;border-color:#fff transparent transparent transparent}
+  .flick-icon .l{left:0;top:23px;border-width:6px 10px 6px 0;border-color:transparent #fff transparent transparent}
+  .flick-icon .r{right:0;top:23px;border-width:6px 0 6px 10px;border-color:transparent transparent transparent #fff}
+
+  .tiles{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    margin-top:11px;
+  }
+
+  .tile{
+    min-height:46px;
+    border-radius:15px;
+    background:rgba(255,249,238,.82);
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:9px;
+    color:#463b31;
+    font-size:12px;
+    font-weight:900;
+  }
+
+  .tile i{
+    width:26px;
+    height:26px;
+    border-radius:9px;
+    display:grid;
+    place-items:center;
+    font-style:normal;
+    color:#fff;
+    background:var(--teal);
+    font-weight:900;
+  }
+
+  .keyboard{
+    margin-top:11px;
+    border-radius:18px;
+    background:#d7cdbd;
+    padding:8px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:6px;
+  }
+
+  .key{
+    aspect-ratio:1.18;
+    border-radius:10px;
+    background:#fff7ea;
+    display:grid;
+    place-items:center;
+    font-size:14px;
+    font-weight:900;
+    color:#48392b;
+  }
+
+  .key.orange{background:var(--orange);color:#fff}
+
+  .kana-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:7px;
+    margin-top:16px;
+  }
+
+  .kana{
+    aspect-ratio:1;
+    border-radius:11px;
+    background:rgba(79,154,143,.15);
+    display:grid;
+    place-items:center;
+    color:var(--deep);
+    font-weight:900;
+    font-size:18px;
+  }
+
+  .kana.hot{background:var(--teal);color:#fff}
+  .atlas-map{
+    margin-top:15px;
+    height:92px;
+    position:relative;
+  }
+
+  .node{
+    position:absolute;
+    width:42px;
+    height:42px;
+    border-radius:15px;
+    display:grid;
+    place-items:center;
+    color:#fff;
+    font-weight:900;
+    background:var(--teal);
+    box-shadow:0 5px 0 rgba(39,95,89,.18);
+  }
+
+  .node.n1{left:8px;top:20px}
+  .node.n2{left:84px;top:2px;background:var(--orange)}
+  .node.n3{left:158px;top:34px;background:var(--brick)}
+  .node.n4{left:88px;top:62px;background:var(--gold)}
+  .line{
+    position:absolute;
+    height:3px;
+    background:rgba(65,52,41,.14);
+    transform-origin:left center;
+    border-radius:4px;
+  }
+  .line.a{left:48px;top:41px;width:55px;transform:rotate(-18deg)}
+  .line.b{left:124px;top:30px;width:55px;transform:rotate(24deg)}
+  .line.c{left:110px;top:73px;width:52px;transform:rotate(-18deg)}
+
+  .exam-mini{
+    margin-top:14px;
+    display:grid;
+    gap:9px;
+  }
+
+  .exam-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:10px;
+    border-radius:15px;
+    background:rgba(255,249,238,.72);
+  }
+
+  .exam-row i{
+    width:32px;
+    height:32px;
+    border-radius:11px;
+    background:var(--brick);
+    color:#fff;
+    display:grid;
+    place-items:center;
+    font-style:normal;
+    font-weight:900;
+  }
+
+  .exam-row b{font-size:13px}
+  .exam-row span{display:block;font-size:11px;color:var(--muted);font-weight:700;margin-top:1px}
+
+  .math-card{
+    margin-top:12px;
+    padding:15px;
+    border-radius:18px;
+    background:#2f2a22;
+    color:#fff;
+  }
+
+  .math-card .calc{
+    font-size:28px;
+    font-weight:900;
+    letter-spacing:-1px;
+  }
+
+  .math-card .hint{
+    margin-top:9px;
+    color:#d9cbb8;
+    font-size:12px;
+    line-height:1.45;
+    font-weight:700;
+  }
+
+  .section{
+    margin-top:56px;
+    position:relative;
+  }
+
+  .section h2{
+    font-size:clamp(28px,4vw,44px);
+    line-height:1;
+    letter-spacing:-1.5px;
+    font-weight:900;
+    margin-bottom:18px;
+  }
+
+  .updates{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:18px;
+  }
+
+  .update-card,.contact-card{
+    position:relative;
+    overflow:hidden;
+    padding:26px;
+    border-radius:30px;
+    background:rgba(255,249,238,.78);
+    border:1px solid rgba(216,203,187,.9);
+    box-shadow:var(--shadow);
+  }
+
+  .update-card strong{
+    display:inline-flex;
+    margin-bottom:14px;
+    padding:8px 12px;
+    border-radius:999px;
+    background:rgba(211,129,58,.13);
+    color:var(--orange2);
+    font-size:12px;
+    font-weight:900;
+    letter-spacing:.6px;
+    text-transform:uppercase;
+  }
+
+  .update-card h3{
+    font-size:30px;
+    line-height:1.05;
+    letter-spacing:-1px;
+    font-weight:900;
+    max-width:620px;
+  }
+
+  .update-card p,.contact-card p{
+    margin-top:12px;
+    color:var(--muted);
+    line-height:1.65;
+    font-weight:650;
+  }
+
+  .tiny-art{
+    position:absolute;
+    right:24px;
+    bottom:20px;
+    width:130px;
+    height:130px;
+    border-radius:34px;
+    background:var(--orange);
+    opacity:.92;
+    transform:rotate(7deg);
+  }
+
+  .tiny-art:before{
+    content:"あ";
+    position:absolute;
+    inset:0;
+    display:grid;
+    place-items:center;
+    color:#fff;
+    font-size:76px;
+    font-weight:900;
+  }
+
+  .mini-timeline{
+    display:grid;
+    gap:12px;
+  }
+
+  .timeline-row{
+    padding:17px;
+    border-radius:22px;
+    background:var(--paper);
+    border:1px solid var(--line);
+  }
+
+  .timeline-row b{
+    display:block;
+    font-size:15px;
+    font-weight:900;
+  }
+
+  .timeline-row span{
+    display:block;
+    margin-top:4px;
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.5;
+    font-weight:650;
+  }
+
+  .contact-card{
+    margin-top:18px;
+    display:grid;
+    grid-template-columns:1fr auto;
+    align-items:center;
+    gap:20px;
+  }
+
+  .contact-card h2{margin:0}
+  .contact-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:flex-end;
+  }
+
+  .footer{
+    margin-top:34px;
+    color:var(--muted);
+    font-size:12px;
+    font-weight:700;
+    text-align:center;
+  }
+
+  .float-note{
+    position:fixed;
+    pointer-events:none;
+    z-index:0;
+    color:rgba(43,37,31,.06);
+    font-size:120px;
+    font-weight:900;
+    line-height:1;
+  }
+
+  .float-note.a{left:3vw;bottom:10vh;transform:rotate(-12deg)}
+  .float-note.b{right:3vw;top:20vh;transform:rotate(14deg)}
+
+  [data-lang="en"] .tr{display:none!important}
+  [data-lang="tr"] .en{display:none!important}
+
+  @media (max-width:940px){
+    .hero{
+      grid-template-columns:1fr;
+      min-height:auto;
+      padding-bottom:26px;
+    }
+
+    .stage{
+      height:760px;
+      max-width:560px;
+      width:100%;
+      margin:0 auto;
+    }
+
+    .jf{right:50%;transform:translateX(50%) rotate(2deg);top:0}
+    .atlas{left:4px;top:430px}
+    .exam{left:auto;right:8px;bottom:10px}
+    .math{right:auto;left:48px;bottom:164px}
+    .updates{grid-template-columns:1fr}
+    .contact-card{grid-template-columns:1fr}
+    .contact-actions{justify-content:flex-start}
+  }
+
+  @media (max-width:620px){
+    .page{padding:16px 14px 44px}
+    .topbar{top:8px;border-radius:20px}
+    .nav a{display:none}
+    .brand span{display:none}
+    .hero-copy{padding-top:16px}
+    h1{letter-spacing:-2px}
+    .lead{font-size:16px}
+    .stage{height:900px}
+    .float-card{position:absolute}
+    .jf{width:100%;max-width:370px;right:50%;top:0}
+    .atlas{width:48%;left:0;top:500px}
+    .exam{width:50%;right:0;top:520px;bottom:auto}
+    .math{width:58%;left:50%;transform:translateX(-50%) rotate(-4deg);bottom:0}
+    .phone{width:200px;height:318px}
+    .update-card,.contact-card{padding:22px}
+    .tiny-art{position:relative;right:auto;bottom:auto;margin-top:18px;width:92px;height:92px}
+    .tiny-art:before{font-size:54px}
+  }
+.card-logo{width:34px;height:34px;border-radius:9px;box-shadow:0 3px 8px rgba(82,61,38,.14);flex-shrink:0}
+  .head-left{display:flex;align-items:center;gap:8px;min-width:0}
+  #oyunlar .section-sub{color:var(--muted);font-size:14.5px;line-height:1.55;max-width:560px;margin-top:6px}
+  .oyun-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:22px}
+  .oyun-card{position:relative;display:flex;flex-direction:column;gap:9px;padding:20px 18px;border-radius:24px;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);text-decoration:none;color:var(--ink);animation:oyunbob 5s ease-in-out infinite;transition:transform .18s ease,box-shadow .18s ease}
+  .oyun-card:hover{transform:translateY(-7px)!important;box-shadow:0 28px 58px rgba(82,61,38,.22)}
+  .oyun-card:nth-child(2){animation-delay:.7s}
+  .oyun-card:nth-child(3){animation-delay:1.4s}
+  .oyun-card:nth-child(4){animation-delay:2.1s}
+  .oyun-card.soon{opacity:.7;animation:none;cursor:default;box-shadow:0 10px 24px rgba(82,61,38,.10)}
+  @keyframes oyunbob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+  @media (prefers-reduced-motion:reduce){.oyun-card{animation:none!important}}
+  .oyun-emoji{font-size:32px;line-height:1}
+  .oyun-tag{align-self:flex-start;font-size:11px;font-weight:800;letter-spacing:.3px;padding:4px 10px;border-radius:999px;background:rgba(79,154,143,.13);color:var(--deep)}
+  .oyun-card h3{font-size:19px;font-weight:900;margin:0}
+  .oyun-card > p{font-size:13px;color:var(--muted);line-height:1.5;margin:0;flex:1}
+  .oyun-go{font-weight:800;font-size:13.5px;color:var(--orange2)}
+  .atlas-line{margin-top:18px;padding:15px 17px;border-radius:18px;background:var(--paper2);border:1px solid var(--line);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .atlas-line .ic{font-size:24px}
+  .atlas-line b{font-size:14px}
+  .atlas-line span.mut{color:var(--muted);font-size:13px}
+
+  /* --- yeni: Flick ikon dili + uniform oyun kartları + Araçlar panosu (v1.6.0) --- */
+  .gi .gl{fill:none;stroke:#3a2f28;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+  .gi .gd{fill:#3a2f28}
+  .kanaglyph{font-family:'Klee One','Shippori Mincho',serif;font-size:19px;fill:#3a2f28}
+  .game-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:22px}
+  .game-card{display:flex;align-items:center;gap:14px;padding:15px 16px;border-radius:22px;background:var(--paper);border:1px solid var(--line);box-shadow:0 10px 24px rgba(82,61,38,.08);text-decoration:none;color:var(--ink);transition:transform .18s,box-shadow .18s}
+  .game-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .game-card .badge{flex:0 0 auto;width:58px;height:58px;border-radius:16px;background:var(--paper2);border:1px solid var(--line);display:grid;place-items:center}
+  .game-card .badge svg{width:42px;height:42px}
+  .game-card .gt b{display:block;font-size:15px;font-weight:900;line-height:1.12}
+  .game-card .gt p{font-size:12px;color:var(--muted);line-height:1.4;margin-top:3px}
+  .game-card .gt .go{font-size:12px;font-weight:800;color:var(--orange2);margin-top:5px;display:inline-block}
+  .game-card.soon{opacity:.68;box-shadow:none;background:repeating-linear-gradient(135deg,var(--paper),var(--paper) 8px,var(--paper2) 8px,var(--paper2) 16px)}
+  .game-card.soon:hover{transform:none}
+  .tools-sub{color:var(--muted);font-size:13.5px;line-height:1.5;margin:8px 0 0;font-family:'Shippori Mincho',serif;font-style:italic}
+  .pano{position:relative;margin-top:18px;max-width:680px;border-radius:28px;padding:24px 16px 20px;background:radial-gradient(circle at 14% 12%,rgba(255,255,255,.4),transparent 42%),linear-gradient(160deg,#e7cfa6,#dcb782);border:1px solid #d3b284;box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 18px 42px rgba(82,61,38,.16)}
+  .pano .tab{position:absolute;top:-12px;left:20px;background:var(--deep);color:#f4eee3;font-size:11px;font-weight:900;letter-spacing:.5px;text-transform:uppercase;padding:5px 12px;border-radius:999px;box-shadow:0 6px 14px rgba(39,95,89,.3)}
+  .pano-grid{position:relative;display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:11px}
+  .pin{position:relative;background:var(--paper);border-radius:15px;padding:13px 6px 9px;text-decoration:none;color:var(--ink);text-align:center;box-shadow:0 7px 16px rgba(82,61,38,.15);transition:transform .16s,box-shadow .16s;border:1px solid rgba(216,203,187,.7)}
+  .pin:hover{transform:translateY(-3px) rotate(-.5deg);box-shadow:0 12px 22px rgba(82,61,38,.22)}
+  .pin:after{content:"";position:absolute;top:6px;left:50%;transform:translateX(-50%);width:7px;height:7px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#d8b25e,#9d7327);box-shadow:0 2px 3px rgba(82,61,38,.4)}
+  .pin .ico{width:40px;height:40px;margin:5px auto 7px}
+  .pin b{display:block;font-size:11.5px;font-weight:800;line-height:1.12}
+  .pin.soon{cursor:default;opacity:.75}
+  .pin.soon:after{background:radial-gradient(circle at 35% 30%,#c9bda8,#9a8f7c)}
+  .pin.wide{grid-column:1/-1;display:flex;align-items:center;gap:11px;text-align:left;padding:11px 14px;border-radius:16px}
+  .pin.wide:after{display:none}
+  .pin.wide .ico{width:34px;height:34px;margin:0;flex:0 0 auto}
+  .pin.wide .wtx b{font-size:13px}
+  .pin.wide .wtx small{display:block;font-size:11px;color:var(--muted);font-weight:700;margin-top:1px}
+  .pin.wide .go{margin-left:auto;font-size:11.5px;font-weight:800;color:var(--deep);white-space:nowrap}
+  .zk-footer{max-width:760px;margin:46px auto 0;padding:22px 20px 42px;border-top:1px solid #d8cbbb;text-align:center;font-family:Inter,system-ui,sans-serif}
+  .zk-footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 14px;margin-bottom:13px}
+  .zk-footer nav a{color:#746a5e;font-size:13px;font-weight:700;text-decoration:none;transition:color .15s}
+  .zk-footer nav a:hover{color:#bf6f2b}
+  .zk-fine{color:#a99a86;font-size:12.5px;font-weight:700}
+
+  /* Two equal product cards keep the homepage neutral between the apps. */
+  .stage{height:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-content:center;padding:24px 0}
+  .stage .float-card{position:relative;inset:auto;width:100%;min-height:390px;margin:0;transform:none!important;display:flex;flex-direction:column}
+  .stage .card-body{display:flex;flex:1;flex-direction:column}
+  .stage .card-body p{min-height:66px}
+  .stage .mini-link{align-self:flex-start;margin-top:auto;background:var(--ink)}
+  .product-visual{height:142px;margin:16px 0 18px;border-radius:22px;background:rgba(234,223,206,.56);border:1px solid rgba(216,203,187,.75);display:grid;place-items:center;overflow:hidden}
+  .flick-board{width:min(210px,88%);padding:9px;border-radius:19px;background:#d7cdbd;display:grid;grid-template-columns:repeat(3,1fr);gap:7px;transform:rotate(-1deg);box-shadow:0 12px 25px rgba(82,61,38,.13)}
+  .flick-key{aspect-ratio:1.35;border-radius:12px;background:#fff8ed;display:grid;place-items:center;color:#4b3d31;font-size:18px;font-weight:900;box-shadow:0 3px 0 rgba(92,64,39,.1)}
+  .flick-key.focus{position:relative;background:var(--orange);color:#fff}
+  .flick-key.focus:before,.flick-key.focus:after{content:"";position:absolute;width:5px;height:5px;border:solid rgba(255,255,255,.9);transform:rotate(45deg)}
+  .flick-key.focus:before{top:7px;border-width:1px 0 0 1px}
+  .flick-key.focus:after{bottom:7px;border-width:0 1px 1px 0}
+  .product-visual .atlas-map{width:230px;margin:0;transform:translateX(10px)}
+  .update-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .update-head img{width:52px;height:52px;border-radius:14px;box-shadow:0 6px 15px rgba(82,61,38,.13)}
+  .update-head strong{margin:0}
+  .game-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media(max-width:1080px){.hero{grid-template-columns:1fr}.stage{width:100%;max-width:780px;margin:0 auto}.stage .float-card{min-height:380px}}
+  @media(max-width:620px){.stage{grid-template-columns:1fr}.stage .float-card{max-width:390px;margin:auto;min-height:360px}.stage .card-body p{min-height:auto}.game-grid{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.float-card{transition:none}}
+.cta-row,.bottom-actions{align-items:center}
+  .visual-credit{max-width:1100px;margin:12px auto 0;padding:0 16px;font-size:12px;line-height:1.6;color:var(--muted);text-align:center}
+</style>
+</head>
+
+<body data-lang="tr">
+  <div class="float-note a">あ</div>
+  <div class="float-note b">カ</div>
+
+  <main class="page">
+    <header class="topbar">
+      <a class="brand" href="/">
+        <img class="mark" src="/zk-logo.svg" alt="Zeynep Kaya Apps" />
+        <div>
+          <b>Zeynep Kaya Apps</b>
+          <span class="tr">Japonca öğrenme uygulamaları</span>
+          <span class="en">apps for learning Japanese</span>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <a href="#oyunlar">
+          <span class="tr">Oyunlar</span>
+          <span class="en">Games</span>
+        </a>
+        <a href="#araclar">
+          <span class="tr">Araçlar</span>
+          <span class="en">Tools</span>
+        </a>
+        <a href="#apps">
+          <span class="tr">Uygulamalar</span>
+          <span class="en">Apps</span>
+        </a>
+        <a href="#contact">
+          <span class="tr">İletişim</span>
+          <span class="en">Contact</span>
+        </a>
+
+        <div class="lang" aria-label="Language">
+          <button id="trBtn" class="on" type="button" onclick="setLang('tr')">TR</button>
+          <button id="enBtn" type="button" onclick="setLang('en')">EN</button>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">
+          <span class="tr">Japanese Flick & Kanji Atlas</span>
+          <span class="en">Japanese Flick & Kanji Atlas</span>
+        </div>
+
+        <h1>
+          <span class="tr">Japonca yazı sistemleri için iki öğrenme uygulaması.</span>
+          <span class="en">Two learning apps for Japanese writing systems.</span>
+        </h1>
+
+        <p class="lead">
+          <span class="tr">
+            Japanese Flick, kana yazımını ve telefon klavyesini çalıştırır. Kanji Atlas ise kanjileri anlam, okuma, yapı ve kelime bağlantılarıyla ele alır.
+          </span>
+          <span class="en">
+            Japanese Flick focuses on kana writing and phone keyboard practice. Kanji Atlas studies kanji through meaning, readings, structure, and vocabulary connections.
+          </span>
+        </p>
+
+
+
+        <div class="manifesto">
+          <span class="tr">Her iki uygulama da kısa çalışma adımları, açık yönlendirmeler ve görsel bağlantılarla düzenli ilerlemeyi destekler. İçerikler Türkçe ve İngilizce kullanılabilir.</span>
+          <span class="en">Both apps support steady progress through short study steps, clear guidance, and visual connections. Their content is available in Turkish and English.</span>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn secondary" href="#apps"><span class="tr">Uygulamalar</span><span class="en">Apps</span></a>
+          <a class="btn secondary" href="#contact"><span class="tr">İletişim</span><span class="en">Contact</span></a>
+        </div>
+      </div>
+
+      <div class="stage" id="parallaxStage">
+        <article class="float-card jf" data-depth="18">
+          <div class="card-head">
+            <span class="head-left"><img class="card-logo" src="/japanese-flick/icons/logo-square.svg" width="34" height="34" alt="Japanese Flick logosu" /><span class="badge">Japanese Flick</span></span>
+            <span class="dots"><i></i><i></i><i></i></span>
+          </div>
+          <div class="card-body">
+            <h2>Japanese Flick</h2>
+            <p class="tr">Hiragana ve katakana, Japonca telefon klavyesindeki flick hareketleriyle çalışılır.</p>
+            <p class="en">Hiragana and katakana are practised through flick gestures on the Japanese phone keyboard.</p>
+            <div class="product-visual" aria-hidden="true"><div class="flick-board"><span class="flick-key">あ</span><span class="flick-key focus">か</span><span class="flick-key">さ</span><span class="flick-key">た</span><span class="flick-key">な</span><span class="flick-key">は</span></div></div>
+            <a class="mini-link" href="/apps/japanese-flick/"><span class="tr">Tanıtım sayfası</span><span class="en">Product page</span></a>
+          </div>
+        </article>
+
+        <article class="float-card atlas" data-depth="-10">
+          <div class="card-head">
+            <span class="head-left"><img class="card-logo" src="/apps/kanji-atlas/icon.svg" width="34" height="34" alt="Kanji Atlas logosu" /><span class="badge teal">Kanji Atlas</span></span>
+            <span class="dots"><i></i><i></i><i></i></span>
+          </div>
+          <div class="card-body">
+            <h3>Kanji Atlas</h3>
+            <p class="tr">Kanjiler; anlamları, okumaları, bileşenleri ve örnek kelimeleriyle birlikte incelenir.</p>
+            <p class="en">Kanji are studied through their meanings, readings, components, and example words.</p>
+            <div class="product-visual" aria-hidden="true"><div class="atlas-map">
+              <div class="line a"></div><div class="line b"></div><div class="line c"></div>
+              <div class="node n1">日</div>
+              <div class="node n2">本</div>
+              <div class="node n3">語</div>
+              <div class="node n4">人</div>
+            </div></div>
+            <a class="mini-link" href="/apps/kanji-atlas/"><span class="tr">Tanıtım sayfası</span><span class="en">Product page</span></a>
+          </div>
+        </article>
+
+
+      </div>
+    </section>
+
+    <section class="section" id="oyunlar">
+      <h2><span class="tr">Oyunlar</span><span class="en">Games</span></h2>
+      <div class="game-grid">
+        <a class="game-card" href="/apps/japanese-flick/oyunlar/kana-takimyildizi/">
+          <div class="badge"><svg class="gi" viewBox="0 0 44 44"><polygon points="9,13 31,10 34,31 12,34" fill="var(--brick)"/><g class="gl"><polyline points="12,29 19,15 28,22 33,12"/></g><circle class="gd" cx="12" cy="29" r="2"/><circle class="gd" cx="19" cy="15" r="2"/><circle class="gd" cx="28" cy="22" r="2"/><circle class="gd" cx="33" cy="12" r="2"/></svg></div>
+          <div class="gt"><b><span class="tr">Kana Takımyıldızı</span><span class="en">Kana Constellation</span></b><p><span class="tr">Kelimenin kana karakterlerini sırayla birleştir.</span><span class="en">Connect a word's kana across the sky, in order.</span></p><span class="go"><span class="tr">Oyna →</span><span class="en">Play →</span></span></div>
+        </a>
+        <a class="game-card" href="/apps/japanese-flick/oyunlar/kana-yagmuru/">
+          <div class="badge"><svg class="gi" viewBox="0 0 44 44"><polygon points="9,13 31,10 34,31 12,34" fill="var(--orange)"/><g class="gl"><path d="M15 12 L12 21"/><path d="M22 11 L19 20"/><path d="M29 13 L26 22"/></g><circle class="gd" cx="12" cy="23" r="1.6"/><circle class="gd" cx="19" cy="22" r="1.6"/><circle class="gd" cx="26" cy="24" r="1.6"/></svg></div>
+          <div class="gt"><b><span class="tr">Kana Yağmuru</span><span class="en">Kana Rain</span></b><p><span class="tr">Kana yere ulaşmadan doğru okunuşu seç.</span><span class="en">Choose the reading before the kana lands.</span></p><span class="go"><span class="tr">Oyna →</span><span class="en">Play →</span></span></div>
+        </a>
+
+      </div>
+    </section>
+
+    <section class="section" id="araclar">
+      <h2><span class="tr">Araçlar</span><span class="en">Tools</span></h2>
+      <p class="tools-sub"><span class="tr">Hiragana ve katakana tabloları ile kana kartları burada.</span><span class="en">Hiragana and katakana charts, plus kana flashcards.</span></p>
+      <div class="pano">
+        <span class="tab"><span class="tr">Çalışma panosu</span><span class="en">Study board</span></span>
+        <div class="pano-grid">
+          <a class="pin" href="/apps/japanese-flick/araclar/hiragana/">
+            <svg class="gi ico" viewBox="0 0 44 44"><polygon points="9,13 31,10 34,31 12,34" fill="var(--orange)"/><text x="21.5" y="29" text-anchor="middle" class="kanaglyph">あ</text></svg><b>Hiragana</b>
+          </a>
+          <a class="pin" href="/apps/japanese-flick/araclar/katakana/">
+            <svg class="gi ico" viewBox="0 0 44 44"><polygon points="9,13 31,10 34,31 12,34" fill="var(--teal)"/><text x="21.5" y="29" text-anchor="middle" class="kanaglyph">ア</text></svg><b>Katakana</b>
+          </a>
+          <a class="pin" href="/apps/japanese-flick/oyunlar/kana-kartlari/">
+            <svg class="gi ico" viewBox="0 0 44 44"><polygon points="9,13 31,10 34,31 12,34" fill="var(--brick)"/><g class="gl"><rect x="17" y="15" width="13" height="17" rx="2.5"/><path d="M15 18 L12 30 L23 32" opacity=".9"/></g></svg><b><span class="tr">Kana Kartları</span><span class="en">Kana Cards</span></b>
+          </a>
+          <a class="pin wide" href="/apps/kanji-atlas/"><span aria-hidden="true" style="font-size:28px">木</span><div class="wtx"><b>Kanji Atlas</b><small><span class="tr">Kanjileri incele</span><span class="en">Explore kanji</span></small></div><span class="go">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="apps">
+      <h2><span class="tr">Uygulamalar</span><span class="en">Apps</span></h2>
+      <div class="updates">
+        <article class="update-card">
+          <div class="update-head"><img src="/japanese-flick/icons/logo-square.svg" alt="Japanese Flick logosu" /><strong><span class="tr">Japonca klavye pratiği</span><span class="en">Japanese typing practice</span></strong></div>
+          <h3>Japanese Flick</h3>
+          <p><span class="tr">Hiragana ve katakana alıştırmaları, Japonca telefon klavyesindeki karakter konumlarını ve flick yönlerini öğretir.</span><span class="en">Hiragana and katakana exercises teach character positions and flick directions on the Japanese phone keyboard.</span></p>
+          <div class="cta-row"><a class="btn secondary" href="/apps/japanese-flick/"><span class="tr">Tanıtım sayfası</span><span class="en">Product page</span></a></div>
+        </article>
+        <article class="update-card">
+          <div class="update-head"><img src="/apps/kanji-atlas/icon.svg" alt="Kanji Atlas logosu" /><strong><span class="tr">Kanji çalışmaları</span><span class="en">Kanji study</span></strong></div>
+          <h3>Kanji Atlas</h3>
+          <p><span class="tr">Kanji anlamları, okumaları, yazım biçimleri ve ortak bileşenleri düzenli bir öğrenme planında bir araya gelir.</span><span class="en">Kanji meanings, readings, written forms, and shared components come together in a structured learning plan.</span></p>
+          <div class="cta-row"><a class="btn secondary" href="/apps/kanji-atlas/"><span class="tr">Tanıtım sayfası</span><span class="en">Product page</span></a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="contact-card">
+        <div>
+          <h2>
+            <span class="tr">İletişim</span>
+            <span class="en">Contact</span>
+          </h2>
+          <p>
+            <span class="tr">
+              Bir sorunla karşılaşırsan ya da bir önerin varsa yazabilirsin.
+            </span>
+            <span class="en">
+              Found a problem or have a suggestion? Send me an email.
+            </span>
+          </p>
+        </div>
+
+        <div class="contact-actions">
+          <a class="btn primary" href="mailto:hello@zeynepkaya.app">
+            hello@zeynepkaya.app
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <footer class="zk-footer">
+    <nav>
+      <a href="/"><span class="tr">Ana sayfa</span><span class="en">Home</span></a>
+
+      <a href="#apps"><span class="tr">Uygulamalar</span><span class="en">Apps</span></a>
+      <a href="#contact"><span class="tr">İletişim</span><span class="en">Contact</span></a>
+    </nav>
+    <div class="zk-fine">© <span id="year">2026</span> Zeynep Kaya Apps · <span style="opacity:.55">site v1.14.2</span></div>
+
+  <p class="visual-credit"><span class="tr">Görsel öğelerde yapay zekâ kullanılmamıştır. Tasarımlar Zeynep Kaya’ya aittir.</span><span class="en">No AI was used in the visual assets. Designs by Zeynep Kaya.</span></p>
+  </footer>
+  </main>
+
+<script>
+  function setLang(lang){
+    document.body.setAttribute('data-lang', lang);
+    document.documentElement.setAttribute('lang', lang);
+    localStorage.setItem('zk_lang', lang);
+
+    document.getElementById('trBtn').classList.toggle('on', lang === 'tr');
+    document.getElementById('enBtn').classList.toggle('on', lang === 'en');
+
+    document.title = lang === 'tr'
+      ? 'Zeynep Kaya Apps'
+      : 'Zeynep Kaya Apps';
+  }
+
+  const savedLang = localStorage.getItem('zk_lang');
+  if(savedLang === 'en' || savedLang === 'tr'){
+    setLang(savedLang);
+  }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+</script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c0c1eb8c7e0f4cd48413deedf5cf28bf"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
